@@ -1,25 +1,27 @@
 <template>
   <div
-    class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-600 to-blue-500 text-white px-6 text-center"
-  >
-    <h1 class="text-5xl sm:text-6xl font-extrabold tracking-wide drop-shadow-lg animate-fade-in">
+    class="min-h-screen flex flex-col items-center sm:items-start justify-center bg-gradient-to-br from-purple-600 to-blue-500 text-white px-6 text-center">
+    <!-- Ajusta el valor de ml-4 según sea necesario -->
+    <h1 class="text-7xl sm:text-9xl font-extrabold tracking-wide drop-shadow-lg animate-fade-in">
       PikaDate
     </h1>
     <p class="text-lg sm:text-xl mt-4 opacity-90 max-w-lg animate-fade-in delay-200">
       A simple date picker to select the best day available
     </p>
-    <button class="mt-8 bg-white text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-lg animate-fade-in delay-400"
-      @click="handleClick">
+    <button
+      class="mt-8 bg-white text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-lg animate-fade-in delay-400"
+      @click="handleClick"
+    >
       Create your calendar!
     </button>
-    <SGithub
-      class="flex flex-col items-end justify-end fixed bottom-4 right-4 animate-fade-in delay-600"
-      v-bind="$props"
-      @popup-close="onClose"
-      @popup-open="onOpen"
-      @popup-block="onBlock"
-      @popup-focus="onFocus"
-      :share-options="shareOptionsGithub"
+    <div class="bg-red-500 w-16 h-16 mt-4 sm:self-end sm:mr-10 rounded">
+      <!-- Contenido del cuadrado -->
+    </div>
+  
+  </div>
+    <button
+      class="flex flex-col items-end justify-end fixed bottom-4 right-4 animate-fade-in delay-400 hover:cursor-pointer"
+      @click="handleClickGithub"
     >
         <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -34,15 +36,10 @@
             fill="white"
             />
       </svg>
-    </SGithub>
-    <s-linked-in
-      class="flex flex-col items-end justify-end fixed bottom-4 right-4 animate-fade-in delay-600 mr-10"
-      v-bind="$props"
-      @popup-close="onClose"
-      @popup-open="onOpen"
-      @popup-block="onBlock"
-      @popup-focus="onFocus"
-      :share-options="shareOptionsLinkedin"
+    </button>
+    <button
+      class="flex flex-col items-end justify-end fixed bottom-4 right-4 animate-fade-in delay-400 mr-10 hover:cursor-pointer"
+      @click="handleClickLinkedin"
     >
         <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -57,22 +54,22 @@
             fill="white"
             />
         </svg>
-    </s-linked-in>
-  </div>
+    </button>
+
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { SGithub, SLinkedIn } from "vue-socials";
 
-const shareOptionsGithub = ref({
-  username: 'jaimemartinez-99',
-  type: 'profile'
-})
+const handleClickGithub = () => {
+  window.open("https://github.com/jaimemartinez-99/", "_blank");
+}
 
-const shareOptionsLinkedin = ref({
-  url: 'www.linkedin.com/in/jaime-martínez-ramón-4588522a6',
-})
+const handleClickLinkedin = () => {
+  window.open("https://www.linkedin.com/in/jaime-martínez-ramón-4588522a6", "_blank");
+}
+
+
 </script>
 
 <style scoped>
