@@ -10,9 +10,10 @@ const routes = [
     component: HomePage
   },
   {
-    path: '/calendarCreation',
+    path: '/calendarCreation/:uuid',
     name: 'CalendarCreation',
-    component: CalendarCreation
+    component: CalendarCreation,
+    props: true // Permite pasar el parámetro uuid como prop al componente
   }
 ]
 
