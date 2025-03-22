@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "^4.0.14",
     "vue": "^3.3.8",
     "vue-router": "^4.5.0",
+    "vue-simple-calendar": "^7.2.0",
     "vue-socials": "^2.0.5"
   },
   "devDependencies": {

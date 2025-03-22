@@ -1,22 +1,20 @@
 <template>
   <div
-    class="min-h-screen flex flex-col items-center sm:items-start justify-center bg-gradient-to-br from-purple-600 to-blue-500 text-white px-6 text-center">
+    class="min-h-screen flex flex-col items-center sm:items-center justify-center bg-gradient-to-br from-purple-600 to-blue-500 text-white px-6 text-center">
     <!-- Ajusta el valor de ml-4 según sea necesario -->
     <h1 class="text-7xl sm:text-9xl font-extrabold tracking-wide drop-shadow-lg animate-fade-in">
       PikaDate
     </h1>
     <p class="text-lg sm:text-xl mt-4 opacity-90 max-w-lg animate-fade-in delay-200">
-      A simple date picker to select the best day available
+      Elige las mejores fechas para tus viajes, eventos o reuniones.
     </p>
     <button
-      class="mt-8 bg-white text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-lg animate-fade-in delay-400"
-      @click="handleClick"
-    >
-      Create your calendar!
-    </button>
-    <div class="bg-red-500 w-16 h-16 mt-4 sm:self-end sm:mr-10 rounded">
-      <!-- Contenido del cuadrado -->
-    </div>
+  class="mt-8 bg-white text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-lg animate-fade-in delay-400 cursor-pointer hover:bg-gray-200 transition-none"
+  @click="handleClick"
+>
+  ¡Crea tu calendario!
+</button>
+
   
   </div>
     <button
@@ -60,6 +58,9 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const handleClickGithub = () => {
   window.open("https://github.com/jaimemartinez-99/", "_blank");
@@ -69,6 +70,9 @@ const handleClickLinkedin = () => {
   window.open("https://www.linkedin.com/in/jaime-martínez-ramón-4588522a6", "_blank");
 }
 
+const handleClick = () => {
+  router.push("/calendarCreation");
+}
 
 </script>
 
